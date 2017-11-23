@@ -8,7 +8,17 @@ import {
     StyleSheet
 } from 'react-native';
 
-export default class LoginScreen extends Component {
+export default class SimpleLoginScreen extends Component {
+
+    login = () => {
+        this.props.navigator.push({
+            screen: 'tuts.LearnScreen',
+            title: 'Learn',
+            animated: true,
+            animationType: 'slide',
+        });
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -21,10 +31,14 @@ export default class LoginScreen extends Component {
                 <TextInput
                     underlineColorAndroid='rgba(0, 0, 0, 0)'
                     autoCorrect={false}
+                    secureTextEntry={true}
                     style={styles.input}
                     placeholder='Password'
                 />
-                <TouchableOpacity style={styles.btnSignIn}>
+                <TouchableOpacity 
+                    style={styles.btnSignIn}
+                    onPress={this.login}
+                >
                     <Text style={styles.textSignIn}>Sign In</Text>
                 </TouchableOpacity>
             </View>

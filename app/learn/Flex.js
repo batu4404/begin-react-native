@@ -16,7 +16,7 @@ export class Flex1 extends Component {
     }
 }
 
-export class Flex2 extends Component {
+export default class FlexScreen extends Component {
     constructor(props) {
         super(props);
         this.square = new Array(3);
@@ -27,7 +27,7 @@ export class Flex2 extends Component {
 
     render() {
         return (
-            <View style={{flex: 1}}>
+            <View style={{flex: 1, backgroundColor: 'white'}}>
                 <View style={{
                     flex: 1, 
                     flexDirection: 'row',
