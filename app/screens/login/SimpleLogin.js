@@ -5,10 +5,20 @@ import {
     Image,
     TextInput,
     TouchableOpacity,
-    StyleSheet
+    StyleSheet,
+    BackHandler
 } from 'react-native';
 
 export default class LoginScreen extends Component {
+
+    login = () => {
+        this.props.navigation.navigate('LearnScreen');
+    }
+
+    gotoChat = () => {
+        this.props.navigation.navigate('ChatScreen');
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -21,11 +31,21 @@ export default class LoginScreen extends Component {
                 <TextInput
                     underlineColorAndroid='rgba(0, 0, 0, 0)'
                     autoCorrect={false}
+                    secureTextEntry={true}
                     style={styles.input}
                     placeholder='Password'
                 />
-                <TouchableOpacity style={styles.btnSignIn}>
+                <TouchableOpacity 
+                    onPress={this.login}
+                    style={styles.btnSignIn}
+                >
                     <Text style={styles.textSignIn}>Sign In</Text>
+                </TouchableOpacity>
+                <TouchableOpacity 
+                    onPress={this.gotoChat}
+                    style={styles.btnSignIn}
+                >
+                    <Text style={styles.textSignIn}>Goto chat</Text>
                 </TouchableOpacity>
             </View>
         )

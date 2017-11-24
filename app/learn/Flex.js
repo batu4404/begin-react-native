@@ -16,7 +16,7 @@ export class Flex1 extends Component {
     }
 }
 
-export class Flex2 extends Component {
+export default class Flex extends Component {
     constructor(props) {
         super(props);
         this.square = new Array(3);
