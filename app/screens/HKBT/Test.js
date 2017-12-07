@@ -115,7 +115,7 @@ const BackgroundView = ({style, size}) => {
             >
                 <View style={{
                     flex: 1,
-                    backgroundColor: 'yellow', 
+                    backgroundColor: 'white', 
                 }}
                 >
                 </View>
@@ -232,25 +232,6 @@ export default class Test extends Component {
         // this.setState({message: 'Swiped right!', transform: {translateX: sizeOfTile}});
     }
 
-    // onSwipe(gestureName, gestureState) {
-    //     const {SWIPE_UP, SWIPE_DOWN, SWIPE_LEFT, SWIPE_RIGHT} = swipeDirections;
-    //     this.setState({gestureName: gestureName});
-    //     switch (gestureName) {
-    //       case SWIPE_UP:
-    //         this.setState({translateX: -100});
-    //         break;
-    //       case SWIPE_DOWN:
-    //         this.setState({translateX: -100});
-    //         break;
-    //       case SWIPE_LEFT:
-    //         this.setState({translateX: -100});
-    //         break;
-    //       case SWIPE_RIGHT:
-    //         this.setState({translateX: -100});
-    //         break;
-    //     }
-    // }
-
     render() {
         const config = {
             velocityThreshold: 0,
@@ -277,7 +258,7 @@ export default class Test extends Component {
                         }
                     />
                     
-                    {/*
+                    
                     <TransformView
                         style={{position: 'absolute',
                         width: sizeOfTile,
@@ -292,6 +273,7 @@ export default class Test extends Component {
                             </View>
                         </ZoomView>
                     </TransformView>
+                    {/*}
                     <ZoomView
                         style={{backgroundColor: 'yellow', height: sizeOfTile, width: sizeOfTile, justifyContent: 'center', position: 'absolute', right: 0, top: sizeOfTile}}
                     >
@@ -300,6 +282,7 @@ export default class Test extends Component {
                         </View>
                     </ZoomView> 
                     */}
+                    
                 </GestureRecognizer>
                 <View>
                     <Text>{this.state.message}</Text>
@@ -332,11 +315,13 @@ const styles =  StyleSheet.create({
         position: 'absolute',
         width: sizeOfTile,
         height: sizeOfTile,
+        backgroundColor: 'transparent',
         // backgroundColor: 'yellow',
         // justifyContent: 'center',
     },
     zoomContainer: {
         flex: 1,
+        margin: 5,
         // width: sizeOfTile,
         // height: sizeOfTile,
         backgroundColor: 'yellow',
