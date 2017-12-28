@@ -3,6 +3,8 @@ import { Platform, View, StyleSheet, StatusBar } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import Login from './app/screens/Login/Login';
 import Animations from './app/screens/animations';
+import TryFlatList from './app/screens/list/TryFlatList';
+import TryInput from './app/screens/InputPanel/TryInput';
 
 const AppNavigator = StackNavigator({
     Login: {
@@ -11,9 +13,15 @@ const AppNavigator = StackNavigator({
     Animations: {
         screen: Animations,
     },
+    TryFlatList: {
+        screen: TryFlatList,
+    },
+    TryInput: {
+        screen: TryInput,
+    },
 },
 {
-    initialRouteName: 'Animations',
+    initialRouteName: 'TryInput',
     headerMode: 'none',
 })
 
