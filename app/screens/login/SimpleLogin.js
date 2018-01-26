@@ -9,47 +9,13 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-// import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
-// import {signInWithGoogleAsync} from './SignInWithThirdParty';
 
-export default class Login extends Component {
+export default class LoginScreen extends Component {
 
-    constructor(props) {
-       super(props);
-
-       this.state = {
-         message: 'hello'
-       }
+    goGoogle = () => {
+        console.log('google', this.props);
+        this.props.navigation.navigate('YoutubeLike');
     }
-
-    async onLoginPress() {
-      try {
-        const result = await this.signInWithGoogleAsync();
-        console.log('result', result);
-        this.setState({message: JSON.stringify(result)});
-      }
-      catch(e) {
-        console.log('error', e);
-      }
-    }
-
-    async signInWithGoogleAsync() {
-      try {
-        const result = await Expo.Google.logInAsync({
-          androidClientId: '285994017712-ka0elcjglbibsif70meg4alvmf8gvqch.apps.googleusercontent.com',
-          scopes: ['profile', 'email'],
-        });
-        
-  
-        if (result.type === 'success') {
-          return result;
-        } else {
-          return {cancelled: true};
-        }
-      } catch(e) {
-        return {error: true};
-      }
-  }
 
     render() {
         return (
@@ -58,7 +24,6 @@ export default class Login extends Component {
                     underlineColorAndroid='rgba(0, 0, 0, 0)'
                     autoCorrect={false}
                     style={styles.input}
-                    value={this.state.message}
                     placeholder='User Name'
                 />
                 <TextInput
@@ -84,7 +49,7 @@ export default class Login extends Component {
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity 
-                    onPress={this.onLoginPress.bind(this)}
+                    onPress={this.goGoogle}
                     style={[styles.signInWithThirdParty, styles.signInWithGoogle]}
                 >
                     <View style={{flexDirection: 'row'}}>
@@ -97,7 +62,6 @@ export default class Login extends Component {
             </View>
         )
     }
-    
 }
 
 const styles = StyleSheet.create({

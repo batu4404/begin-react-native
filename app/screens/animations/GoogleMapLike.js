@@ -5,7 +5,7 @@ import {
     StyleSheet,
     TouchableWithoutFeedback,
 } from 'react-native';
-import {MapView} from 'expo';
+import {MapView} from 'react-native-maps';
 
 export default class GoogleMapLike extends Component {
     constructor(props) {
